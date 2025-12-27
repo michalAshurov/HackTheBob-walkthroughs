@@ -54,6 +54,7 @@ This showed that the target host (RHOSTS) needed to be set.
 **Step 4: Setting the target IP address**
 I configured the target machine’s IP address:
 set RHOSTS 10.129.47.108
+show-options.png
 This tells Metasploit which remote host should be attacked.
 
 **Step 5: Setting the target IP address**

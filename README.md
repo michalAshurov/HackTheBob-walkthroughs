@@ -66,7 +66,7 @@ I configured the target machine’s IP address:
 set RHOSTS 10.129.47.108
 This tells Metasploit which remote host should be attacked.
 
-#### **Step 5: Setting the Local Host (LHOST)**
+#### **Step 5: Setting the target IP address**
 set the local host accordingly to my IP adress:
 set LHOST 10.10.15.26
 
@@ -92,16 +92,16 @@ whoami
 **Submit the flag located in the makis user's home directory.**
 
 With root privileges, I was able to navigate the file system and access protected directories, including:
-cd /home/makis
+cd /root
 ls
-cat user.txt
+cat root.txt
 
 ---
 
 ### **Task 8**
 **Submit the flag located in root's home directory.**
-I also accessed the user flag:
-cd /root
-ls
-cat root.txt
 
+I also accessed the user flag:
+cd /home/makis
+ls
+cat user.txt

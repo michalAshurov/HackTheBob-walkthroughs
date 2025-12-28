@@ -10,6 +10,8 @@ The goal was to gain initial access and escalate privileges to root.
 
 I started by running a basic `nmap` scan against the target to enumerate open TCP ports.
 
+![nmapCommand](nmapCommand.png)
+
 The scan revealed **four open ports** within the top 1000 TCP ports:
 - **21/tcp** (FTP)
 - **22/tcp** (SSH)
@@ -71,6 +73,8 @@ set LHOST 10.10.15.26
 #### **Step 6: Running the exploit**
 After configuring the required options, I executed the exploit:
 exploit
+
+![exploitCommand](exploitCommand.png)
 
 **command shell opend on the target system**
 

@@ -12,13 +12,12 @@ I started by running a basic `nmap` scan against the target to enumerate open TC
 
 ![nmapCommand](nmapCommand.png)
 
-The scan revealed **four open ports** within the top 1000 TCP ports:
+The scan revealed **the next ports** within the top 1000 TCP ports:
 - **21/tcp** (FTP)
 - **22/tcp** (SSH)
 - **139/tcp** (NetBIOS-SSN)
 - **445/tcp** (Microsoft-DS)
 
-Therefore, the answer to this task is **4**.
 
 ---
 
@@ -28,7 +27,6 @@ Therefore, the answer to this task is **4**.
 To identify the version of the FTP service running on the target, I performed an `nmap` scan with service version detection enabled using the `-sV` option.
 While a basic scan only reveals that an FTP service is running on port 21, enabling `-sV` allows nmap to actively query the service and extract banner information in order to determine the exact software and version.
 The scan revealed that the FTP service is **vsftpd version 2.3.4**, which is a known vulnerable version associated with a publicly documented backdoor.
-Therefore, the version of VSFTPd running on Lame is **2.3.4**.
 
 ---
 
@@ -39,7 +37,6 @@ In addition to service version detection, I enabled the default NSE scripts
 using the `-sC` option to gather additional contextual information about therunning services.
 As shown in the following output line:
 OS: Unix (Samba 3.0.20-Debian)
-the Samba version running on the host is **3.0.20**.
 
 ---
 

